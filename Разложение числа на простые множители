@@ -4,16 +4,16 @@
 #include <cmath>
 using namespace std;
 int main(){
-    long long n; 
+    long long n; # заводим переменную типа long long для больших чисел
     cin >> n;
-    vector<long long> v;
-    for (int i = 2; i * i <= n; i++){
+    vector<long long> v; # массив куда складываем простые множители
+    for (int i = 2; i * i <= n; i++){ # перебираем простые множители до корня
         while (n % i == 0){
             v.push_back(i);
             n/=i;
         }
     }
-    if (n > 1){
+    if (n > 1){ # так как после корня может быть только один простой делитель добавляем его
         v.push_back(n);
     }
     for (long long x:v){
